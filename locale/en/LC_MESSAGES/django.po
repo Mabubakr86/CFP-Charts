@@ -1,0 +1,51 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-03-10 15:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\templates\base.html:31 .\templates\base.html:40
+#: .\templates\results.html:28
+msgid "حاسب الغاز"
+msgstr "CFP Gas Calculator"
+
+#: .\templates\base.html:45 .\templates\results.html:47
+msgid "قيمه الضغط المقاس"
+msgstr "Measured Pressure"
+
+#: .\templates\base.html:55 .\templates\results.html:59
+msgid "قيمه الحراره المقاسه"
+msgstr "Measured Temperature"
+
+#: .\templates\base.html:64 .\templates\results.html:64
+msgid "مقاس الاورفيس"
+msgstr "Orifice Size"
+
+#: .\templates\base.html:73
+msgid "أحسب"
+msgstr "Calculate"
+
+#: .\templates\results.html:40
+msgid "تقرير النتائج"
+msgstr "Results Report"
+
+#: .\templates\results.html:73 .\templates\results.html:86
+msgid "قيمه الغاز المحسوبه"
+msgstr "Calculated Gas Rate"
+
+#: .\templates\results.html:89
+msgid "القيم خارج نطاق البيانات"
+msgstr "Values out of Charts Range"

@@ -1,0 +1,110 @@
+{% load static %} {% load i18n %}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="CFP charts" />
+    <meta name="CFP" content="CFP charts" />
+    <meta name="generator" content="Hugo 0.80.0" />
+    <title>CFP</title>
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.rtlcss.com/bootstrap/v4.5.3/css/bootstrap.min.css"
+      integrity="sha384-JvExCACAZcHNJEc7156QaHXTnQL3hQBixvj5RV5buE7vgnNEzzskDtx9NQ4p6BJe"
+      crossorigin="anonymous"
+    />
+    <meta name="theme-color" content="#7952b3" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body class="bg-light">
+    <section id="signIn">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-7 col-lg-5 mt-5 mx-auto text-center">
+            <h1 id="bigLogo" class="text-primary">
+              <a href="{% url 'chart:index'  %}"
+                >{% trans "حاسب الغاز" %}<img
+                  class="mb-2"
+                  src="imgs/logo-icon2.svg"
+                  alt=""
+              /></a>
+            </h1>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-7 col-lg-5 my-3 mx-auto">
+            <div class="bg-white rounded">
+              <h5 class="blockHeading p-3 text-center text-primary">
+                {% trans "تقرير النتائج" %}
+              </h5>
+              <form class="p-4" method="POST" id="myform">
+                {% csrf_token %}
+                <input type="hidden" name="alert" value="{{alert}}" readonly />
+
+                <label for="press" class="form-label"
+                  >{% trans "قيمه الضغط المقاس" %}</label
+                >
+                <input
+                  type="text"
+                  name="pressure"
+                  value="{{pressure}}"
+                  class="form-control"
+                  id="press"
+                  disabled
+                />
+
+                <label for="temp" class="form-label"
+                  >{% trans "قيمه الحراره المقاسه" %}</label
+                >
+                <input type="text" name="temperature" class="form-control"
+                value="{{temperature}}"" id="temp" disabled />
+                <label for="orificefd" class="form-label"
+                  >{% trans "مقاس الاورفيس" %}
+                </label>
+                <select name="orifice" id="orificefd" class="form-control">
+                  <option value="0.125" selected>1/8</option>
+                </select>
+
+                {% if gas%}
+
+                <label for="temp" class="form-label"
+                  >{% trans "قيمه الغاز المحسوبه" %}</label
+                >
+                <input
+                  type="text"
+                  name="temperature"
+                  class="form-control"
+                  id="temp"
+                  value="{{gas|floatformat:2}}"
+                  disabled
+                />
+                {% else %}
+
+                <label for="temp" class="form-label">
+                  {% trans "قيمه الغاز المحسوبه" %}</label
+                >
+                <input type="text" name="temperature" class="form-control"
+                id="temp" value="{% trans "القيم خارج نطاق البيانات" %}"
+                disabled /> {% endif %}
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="row"></div>
+      </div>
+    </section>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.rtlcss.com/bootstrap/v4.5.3/js/bootstrap.min.js"
+      integrity="sha384-VmD+lKnI0Y4FPvr6hvZRw6xvdt/QZoNHQ4h5k0RL30aGkR9ylHU56BzrE2UoohWK"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
